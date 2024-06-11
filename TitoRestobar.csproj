@@ -107,8 +107,9 @@
     <Compile Include="Dao\DaoMesa.cs" />
     <Compile Include="Dao\DaoPedido.cs" />
     <Compile Include="Dao\DaoProducto.cs" />
-    <Compile Include="IConectionDB\ConexionDB.cs" />
-    <Compile Include="IConectionDB\IConexionDB.cs" />
+    <Compile Include="Interfaces\ICalculable.cs" />
+    <Compile Include="Interfaces\IConectionDB\ConexionDB.cs" />
+    <Compile Include="Interfaces\IConectionDB\IConexionDB.cs" />
     <Compile Include="Controller\MesaController.cs" />
     <Compile Include="Controller\PedidoController.cs" />
     <Compile Include="Controller\ProductoController.cs" />

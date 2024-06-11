@@ -12,11 +12,6 @@ namespace TitoRestobar.Dao
     {
         private readonly MySqlConnection conexion;
 
-        public DAOProducto(MySqlConnection conexion)
-        {
-            this.conexion = conexion;
-        }
-
         public List<Producto> ListadoDeProductos()
         {
             List<Producto> lista = new List<Producto>();

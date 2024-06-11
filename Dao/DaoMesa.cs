@@ -7,13 +7,13 @@ using TitoRestobar.Model;
 
 namespace TitoRestobar.Dao
 {
-    public class DAOMesa
+    public class DaoMesa
     {
         private Mesa mesa;
         private MySqlConnection conexion;
         private readonly IConexionDB conexionDB;
 
-        public DAOMesa(IConexionDB conexionDB)
+        public DaoMesa(IConexionDB conexionDB)
         {
             this.conexionDB = conexionDB;
             try
@@ -24,6 +24,10 @@ namespace TitoRestobar.Dao
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        public DaoMesa()
+        {
         }
 
         public List<Mesa> ListarMesas()

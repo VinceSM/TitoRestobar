@@ -12,11 +12,6 @@ namespace TitoRestobar.Dao
     {
         private readonly MySqlConnection conexion;
 
-        public DaoPedido(MySqlConnection conexion)
-        {
-            this.conexion = conexion;
-        }
-
         public void CrearPedido(Pedido pedido)
         {
             string consulta = "INSERT INTO pedidos (mesa_id, fecha_hora_apertura) VALUES (@mesa_id, @fecha_hora_apertura)";
@@ -30,6 +25,12 @@ namespace TitoRestobar.Dao
                 conexion.Close();
             }
         }
+
+        public Pedido VerPedido(Mesa mesa) 
+        {
+            return null;
+        }
+
 
         public List<Pedido> ListarPedidosDeMesa(Mesa mesa)
         {

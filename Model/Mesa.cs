@@ -11,6 +11,8 @@ namespace TitoRestobar.Model
         public int Id { get; set; }
         public string Nombre { get; set; }
 
+        public Pedido pedido { get; set; }
+
         public Mesa(string nombre)
         {
             Nombre = nombre;
