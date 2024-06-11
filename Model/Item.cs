@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace TitoRestobar.Model
 {
-    internal class Item
+    public class Item
     {
+        public Producto Producto { get; set; }
+        public int Cantidad { get; set; }
+        public float PrecioTotal { get; set; }
+
+        public Item(Producto producto, int cantidad, float precioTotal)
+        {
+            Producto = producto;
+            Cantidad = cantidad;
+            PrecioTotal = precioTotal;
+        }
+
+        public float CalcularTotal()
+        {
+            return Producto.Precio * Cantidad;
+        }
     }
 }

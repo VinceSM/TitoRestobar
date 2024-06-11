@@ -104,6 +104,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\DaoMesa.cs" />
+    <Compile Include="Dao\DaoPedido.cs" />
+    <Compile Include="Dao\DaoProducto.cs" />
     <Compile Include="IConectionDB\ConexionDB.cs" />
     <Compile Include="IConectionDB\IConexionDB.cs" />
     <Compile Include="Controller\MesaController.cs" />
@@ -170,8 +173,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
