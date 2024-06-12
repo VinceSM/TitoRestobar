@@ -18,10 +18,5 @@ namespace TitoRestobar.Model
             Cantidad = cantidad;
             PrecioTotal = precioTotal;
         }
-
-        public float CalcularTotal()
-        {
-            return Producto.Precio * Cantidad;
-        }
     }
 }

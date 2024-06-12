@@ -8,5 +8,8 @@ namespace TitoRestobar.Interfaces
 {
     public interface ICalculable
     {
+        float CalcularTotalPedido();
+        float CalcularSubTotalPedido();
+        float CalcularDescuentoPedido();
     }
 }

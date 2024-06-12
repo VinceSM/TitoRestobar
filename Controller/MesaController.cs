@@ -14,13 +14,7 @@ namespace TitoRestobar.Controller
         private List<Mesa> mesas;
         private DaoMesa daoMesa;
         private DaoPedido daoPedido;
-
-        public MesaController()
-        {
-            this.mesas = new List<Mesa>();
-            this.daoMesa = new DaoMesa();
-            this.daoPedido = new DaoPedido();
-        }
+        private PedidoController pedidoController;
 
         public List<Mesa> GetMesas()
         {
@@ -68,15 +62,7 @@ namespace TitoRestobar.Controller
             return nombres;
         }
 
-        public void AgregarItemEnPedido(Pedido pedido, Item item)
-        {
-            pedido.AgregarItem(item);
-        }
-
-        public void EliminarItemEnPedido(Pedido pedido, Item item)
-        {
-            pedido.EliminarItem(item);
-        }
+        
 
         public List<string> ObtenerDetallesDePedidoEnMesa(Mesa mesa)
         {
@@ -85,7 +71,7 @@ namespace TitoRestobar.Controller
             if (pedido != null)
             {
                 detalles.Add($"Fecha y hora de apertura: {pedido.FechaHoraApertura}");
-                detalles.Add($"Total del pedido: {pedido.TotalPedido()}");
+                detalles.Add($"Total del pedido: {pedidoController.CalcularTotalPedido()}");
                 detalles.Add("Items del pedido:");
                 foreach (Item item in pedido.Items)
                 {
