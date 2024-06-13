@@ -186,7 +186,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ItemController.cs" />
     <Compile Include="Dao\DaoMesa.cs" />
     <Compile Include="Dao\DaoPedido.cs" />
     <Compile Include="Dao\DaoProducto.cs" />
@@ -197,6 +196,7 @@
     <Compile Include="Controller\PedidoController.cs" />
     <Compile Include="Controller\ProductoController.cs" />
     <Compile Include="Controller\StockController.cs" />
+    <Compile Include="Model\DetallePedido.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Mesa.cs" />
     <Compile Include="Model\Pedido.cs" />

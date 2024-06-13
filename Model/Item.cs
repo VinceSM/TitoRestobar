@@ -10,13 +10,16 @@ namespace TitoRestobar.Model
     {
         public Producto Producto { get; set; }
         public int Cantidad { get; set; }
-        public float PrecioTotal { get; set; }
 
-        public Item(Producto producto, int cantidad, float precioTotal)
+        public Item(Producto producto, int cantidad)
         {
             Producto = producto;
             Cantidad = cantidad;
-            PrecioTotal = precioTotal;
+        }
+
+        public float getPrecio()
+        {
+            return Producto.Precio * Cantidad;
         }
     }
 }

@@ -26,9 +26,36 @@ namespace TitoRestobar.Dao
             }
         }
 
-        public Pedido VerPedido(Mesa mesa) 
+        public Pedido VerPedido(Mesa mesa)
         {
-            return null;
+            string consulta = "SELECT * FROM pedidos WHERE mesa_id = @mesa_id";
+            Pedido pedido = null;
+
+            using (MySqlCommand cmd = new MySqlCommand(consulta, conexion))
+            {
+                cmd.Parameters.AddWithValue("@mesa_id", mesa.Id);
+
+                conexion.Open();
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int pedidoId = reader.GetInt32("id");
+                        DateTime fechaHoraApertura = reader.GetDateTime("fecha_hora_apertura");
+                        DateTime fechaHoraCierre = reader.GetDateTime("fecha_hora_cierre");
+
+                        pedido = new Pedido(fechaHoraApertura, new List<Item>(), 0, fechaHoraCierre)
+                        {
+                            Id = pedidoId
+                        };
+                    }
+                }
+
+                conexion.Close();
+            }
+
+            return pedido;
         }
 
 
@@ -49,7 +76,9 @@ namespace TitoRestobar.Dao
                         int pedidoId = reader.GetInt32("id");
                         DateTime fechaHoraApertura = reader.GetDateTime("fecha_hora_apertura");
                         List<Item> items = new List<Item>(); 
-                        Pedido pedido = new Pedido(fechaHoraApertura, items)
+                        float descuento = reader.GetFloat("descuento");
+                        DateTime fechaHoraCierre = reader.GetDateTime("fecha_hora_cierre");
+                        Pedido pedido = new Pedido(fechaHoraApertura, items, descuento, fechaHoraCierre)
                         {
                             Id = pedidoId
                         };
